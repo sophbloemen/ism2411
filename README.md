@@ -17,6 +17,7 @@ Each folder corresponds to one module.
 - `week06/` — Loops: sales report with sum, average, max
 - `week07/` — Functions: calculate_tax, apply_discount
 - `week08/` — Git: first GitHub submission
+- 'week10/' - Lists & Tuples
 
 ## How to Run
 
