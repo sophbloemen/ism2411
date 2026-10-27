@@ -1,0 +1,96 @@
+
+#Reflection
+###  1. I am suprised on how python grabs itmes from the list, like '-2:' grabs the last two items. I am also supprised that there is a "0" item in lists.
+## 2. Python would have helepd me when calculating rolling averages in finance. I can use the list comprehension to grab the last 5 days of stock prices and calculate the average. 
+
+#exercise one
+print("---Exercise 1: Build a List---")
+
+inventory = ["pen", "notebook", "stapler", "tape", "marker"]
+print(inventory)
+print(len(inventory))
+
+# Exercise 2
+print("---Exercise 2: Index Practice---")
+print(inventory[0]) #grabs first item
+print(inventory[-1]) #grabs last item
+
+middle = len(inventory) // 2
+print(inventory[middle])  #grabs middle (not hard coded)
+
+# Exercise 3
+print("---Exercise 3: Slicing---")
+print(inventory[:3])  #grabs items at index 0, 1, and 2
+print(inventory[-2:])   #grabs last two items
+print(inventory[::2])  #grabs every other item starting at index 0
+
+# Exercise 4
+print("---Exercise 4: List Methods---")
+inventory.append("envelope")  #adds item to end of list
+print(inventory)
+
+inventory.remove("tape")  #removes item from list
+print(inventory)
+
+inventory.sort()  #sorts list in alphabetical order
+print(inventory)
+
+#exercise 5
+print("---Exercise 5: Tuple Comprehension---")
+
+coords = (40.7128, -74.0060)
+
+try:
+     coords[0] = 99
+except TypeError as error:
+    print(f"TypeError caught: {error}")
+    print("Tuple protects coordinates from being changed by accident")
+
+    # Exercise 6
+print("---Exercise 6: List Average Sales---")
+
+sales = [100, 250, 75, 480, 200]
+total = sum(sales)
+count = len(sales)
+average = total / count 
+print(f"Average sales: {average}")
+print(f"Total sales: {total}")
+print(f"Number of sales: {count}")
+print(f"Best sale: {max(sales)}")
+print(f"Worst sale: {min(sales)}")
+
+best = sales[0]
+worst = sales[0]
+
+for amount in sales: 
+    if amount > best:
+        best = amount
+    if amount < worst:
+        worst = amount
+print(f"Best sale: (loop) {best}")
+print(f"Worst sale: (loop) {worst}")
+
+# Exercise 7
+print("---Exercise 7: Accumulator Pattern---")
+
+prices = [9.99, 14.99, 4.99, 19.99, 29.99]
+
+discounted = []
+for price in prices:
+    discounted.append(round(price * 0.9, 2))
+
+print(prices)
+print(discounted)
+
+# Exercise 8
+print("---Exercise 8: Filter---")
+
+sales = [340, 127, 589, 204, 467, 88, 731, 315, 62, 490 ]
+
+high_sales = []
+for amount in sales:
+    if amount > 200:
+        high_sales.append(amount)
+print(high_sales)
+print(f"Count: {len(high_sales)}")
+print(f"Average: {sum(high_sales) / len(high_sales)}")
